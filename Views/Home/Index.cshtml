@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    @model SaongroupDevTest.Models.Regions.RegionListViewModel
+
+    var selectedItem = string.Empty;
+}
+
+<div class="text-center container">
+    <div class="row my-5 justify-content-center">
+        <h1>TOP 10 COVID CASES</h1>
+    </div>
+    <div class="row border-top border-bottom justify-content-between py-2">
+        <div class="col-4 d-flex justify-content-around">
+            <div class="col-6 p-0">
+                <select name="" id="" class="h-100 w-100">
+                    <option>Regions</option>
+                    @foreach(var reg in Model.regions)
+                    {
+                        <option value="@reg.Iso">@reg.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="col-6">
+                <button class="w-100 btn btn-primary">Report</button>
+            </div>
+        </div>
+        <div class="col-6 d-flex justify-content-between">
+            <button class="col-3 btn btn-primary">JSON</button>
+            <button class="col-3 btn btn-primary">XML</button>
+            <button class="col-3 btn btn-primary">CSV</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th></th>
+                    <th>CASES</th>
+                    <th>DEATHS</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
